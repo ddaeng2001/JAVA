@@ -25,7 +25,7 @@ public class C07TypeChange_String {
 		int n1 = Integer.parseInt("10");	//웹개발코드 시 폼(프론트엔드)으로부터 전달받은 값은 다 문자열임
 						//"문자"에 갇힌 숫자를 정수형으로 변환시켜줌 : parseInt
 						//""내에는 순수하게 정수가 들어가야함 ex>!를 삽입 시 오류!
-		//원시타입 데이터를 객체화 시키거나 반대의 상황
+		//원시타입 데이터를 객체화 시키거나 반대의 상황을 발생시킬때 wrapper 사용(추후에 설명)
 											
 		int n2 = Integer.parseInt("20");
 		System.out.println(n1+n2);
@@ -39,6 +39,11 @@ public class C07TypeChange_String {
 		short n6 = Short.parseShort("6");
 		
 		System.out.println(n5+n6);
+		//------------------------------------------------------
+		
+		String strValue = "A";
+		char var = (Char)strValue; // 틀림
+		char var = strValue.charAt(0); //char형변환방법
 	}
 
 }
