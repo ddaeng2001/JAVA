@@ -70,6 +70,7 @@ public class C02While {
 		int ndan = sc.nextInt();
 
 		int dan = 2;
+		
 		//n>2 조건
 		if(ndan<2) {
 			int temp = ndan;
@@ -90,6 +91,8 @@ public class C02While {
 			dan++;
 			System.out.println();
 		}
+		
+		sc.close();
 		
 		
 		
