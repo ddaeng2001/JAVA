@@ -31,7 +31,7 @@ public class C08TypeChnage문제 {
 
 		[예시]
 		----------------------------
-		byte byteValue = 10;
+		byte byteValue = 10;	//10은 int자료형이기에 자동형변환이 일어난 상황
 		char charValue = 'A';
 		----------------------------
 		1) int intValue = byteValue;
@@ -62,7 +62,7 @@ public class C08TypeChnage문제 {
 		float floatValue = 2.5;
 		double doubleValue = 2.5;
 		----------------------------
-		1) byte result = byteValue + byteValue;
+		1) byte result = byteValue + byteValue; //덧셈 연산자를 사용한다는 것은 cpu에서 편해하는 int자료형으로 바뀐 후 연산처리가 됨
 		2) int result = 5 + byteValue;
 		3) float result = 5 + floatValue;
 		4) double result = 5 + doubleValue;
@@ -74,7 +74,7 @@ public class C08TypeChnage문제 {
 		short s2 = 2;
 		int i1 = 3;
 		int i2 = 4;
-		short result = s1 + s2;
+		short result = s1 + s2; //덧셈 결과는 int형이기 때문에 문제 발생
 		int result = i1 + i2;
 		----------------------------
 
@@ -89,7 +89,9 @@ public class C08TypeChnage문제 {
 		char c2 = c1 + 1;
 		System.out.println(c2);
 		----------------------------
-
+		정답>>
+		1) char c2 = (char)(c1 + 1);
+		2) int c2 = c1 + 1;
 
 		6. 자바에서 / 는 나눗셈 연산자 입니다 x/y 는 x 를 y 로 나누는 연산을 수행합니다
 		빈칸에 들어갈 타입은 무엇이며 출력되는 결과와 그 이유를 설명해 보세요
@@ -97,10 +99,12 @@ public class C08TypeChnage문제 {
 		----------------------------
 		int x = 5;
 		int y = 2;
-		____ result = x/y;
+		____ result = x/y
 		System.out.println(result);
 		----------------------------
-
+		정답 >> 소수점 자리 결과값 얻는 방법
+		1. (x*10)/y;
+		2. (double)x/y;
 		7. 6번 문제에서 출력되는 결과로 2.5가 나오게 하고 싶습니다 빈칸에 들어갈 코드를
 		작성하세요
 		[예시]
@@ -132,12 +136,13 @@ public class C08TypeChnage문제 {
 		int result =_______________;
 		System.out.println(result);
 		----------------------------
-
+		제일 큰 double 자료형으로 모두 바뀔 것이다!
+		int result = 2.0 + 1.8 + 2.5 + 3.9;
 
 		10. 다음코드를 실행했을 때 출력 결과를 적어보세요
 		[예시]
 		----------------------------
-		String str1 = 2 + 3 + "";
+		String str1 = 2 + 3 + ""; (숫자)5 + 문자 => (문자)5
 		String str2 = 2 + "" + 3;
 		String str3 = "" + 2 + 3;
 		System.out.println(str1);
