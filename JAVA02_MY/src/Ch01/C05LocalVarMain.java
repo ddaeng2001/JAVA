@@ -65,7 +65,7 @@ public class C05LocalVarMain {
 		C05Simple obj = new C05Simple();
 		obj.Func1();
 		System.out.println("------------------------");
-		obj.Func2();
+//		obj.Func2();
 	}
 
 }
