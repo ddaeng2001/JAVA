@@ -13,7 +13,7 @@ class C02Person {
 }
 
 
-public class C02PersonMain {
+public class C02PersonMain { //파일과 동일한 클래스 필수!
 
 	public static void main(String[] args) {
 		C02Person hong = new C02Person();	
