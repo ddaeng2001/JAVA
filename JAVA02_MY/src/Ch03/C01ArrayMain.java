@@ -3,8 +3,6 @@ package Ch03;
 import java.util.Arrays;
 import java.util.Scanner;
 
-//배열 쓰긴 쓰나 사용빈도가 떨어짐 - but 코딩테스트에서는 多
-//배열보다 JAVA에서는 콜렉션(Collection)이 더 중요!
 public class C01ArrayMain {
 
 	public static void main(String[] args) {

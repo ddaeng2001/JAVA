@@ -8,6 +8,9 @@ public class C01NullPointerExceptionMain {
 		String str = null;
 		System.out.println(str.toString());}
 		catch(NullPointerException e) {
+		//catch : try 내 코드에서 에러가 발생시 catch블록이 실행되서 "예외 발생" 메시지를 보여줌
+				// 프로그래밍에서 오류가 발생했을 때 그 상황을 처리하기 위해 사용되는 코드블록
+				// 문제가 생기면 catch코드 블럭 내의 코드로 처리할게~!
 			  //예외 객체를 e로 받아냄
 			  System.out.println("예외발생 : " + e);
 			  System.out.println(e.getCause()); //원인 확인
