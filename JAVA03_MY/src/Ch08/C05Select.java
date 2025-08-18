@@ -59,9 +59,9 @@ public class C05Select { //db 조회결과물 가져오기
 		}finally {
 			
 			//자원제거(역순으로 : 후에 나온 걸 선 제거)! - Surround with Try/Catch 클릭
-//			try {rs.close();} catch (SQLException e) {e.printStackTrace();} 
-//			try {pstmt.close();} catch (SQLException e) {e.printStackTrace();} 
-//			try {conn.close();} catch (SQLException e) {e.printStackTrace();} 
+			try {rs.close();} catch (SQLException e) {e.printStackTrace();} 
+			try {pstmt.close();} catch (SQLException e) {e.printStackTrace();} 
+			try {conn.close();} catch (SQLException e) {e.printStackTrace();} 
 			
 		}
 	}
