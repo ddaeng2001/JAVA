@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class C02Insert {
+public class C05Select { //db 조회결과물 가져오기
 
 	public static void main(String[] args) {
 		//DB CONN DATA
@@ -34,26 +34,23 @@ public class C02Insert {
 		//sql query 객체 생성
 		//Query문 준비
 //		pstmt = conn.prepareStatement("insert into tbl_a values(1, 'no') ");
-		pstmt = conn.prepareStatement("insert into tbl_a values(?, ?) "); 	//? : 변수
-//		pstmt.setInt(1, 2); //첫 번째 물음표에, 들어갈 문자
-//		pstmt.setString(2, "홍길동"); //두 번째 물음표에, 들어갈 문자열
+		rs = pstmt.executeQuery();
+		//result set(rs)은 표 형태의 오브젝트를 그대로 가져옴
+		//rs는 0번째 column 가리킴
 		
-		//외부로부터 인자값을 받아서 db로 넣어줌
-		pstmt.setInt(1, Integer.parseInt(args[0]));
-						//0번째 args는 숫자형이라 가정
-		pstmt.setString(2,  args[1]);
-		
-		//sql를 dbms로 전달
-		//전송(전달)
-		int result = pstmt.executeUpdate();	//DML(INSERT,UPDATE,DELETE)전달 가능, 
-		//결과값으로 java에서 처리
-		if(result>0){
-			System.out.println("INSERT 성공");
-		}
-		else {
-			System.out.println("INSERT 실패");
+		if(rs!=null) {
+			while(rs.next()) { //rs.next() : rs가 가리키고 있는 커서의 위치를 다음으로 내림(행이 있으면 True, 없으면 False)
+				System.out.print(rs.getInt("no")+".");
+								//rs에서 가리키고 있는 no라고하는 컬럼의 값을 가지고 옴.
+								//no의 자료형이 Int이기에 get Int라고 한 것
+				System.out.println(rs.getString("name"));
+									//현재 커서에 있는 위치의 name이라고 하는 행을 가녀옴
+			}
 		}
 		
+		pstmt = conn.prepareStatement("SELECT * FROM tbl_a");
+//		pstmt = conn.prepareStatement("SELECT * FROM opendatadb.tbl_a;");
+													//db명 필요x,     ;필요x
 		
 		}catch(ClassNotFoundException e1) {
 			System.out.println("클래스 부재 예외발생!");
@@ -61,8 +58,10 @@ public class C02Insert {
 			System.out.println("SQL 예외발생!");
 		}finally {
 			
-			//자원제거! - Surround with Try/Catch 클릭
-			try {conn.close();} catch (SQLException e) {e.printStackTrace();} 
+			//자원제거(역순으로 : 후에 나온 걸 선 제거)! - Surround with Try/Catch 클릭
+//			try {rs.close();} catch (SQLException e) {e.printStackTrace();} 
+//			try {pstmt.close();} catch (SQLException e) {e.printStackTrace();} 
+//			try {conn.close();} catch (SQLException e) {e.printStackTrace();} 
 			
 		}
 	}

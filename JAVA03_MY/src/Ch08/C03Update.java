@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class C02Insert {
+public class C03Update {
 
 	public static void main(String[] args) {
 		//DB CONN DATA
@@ -34,24 +34,23 @@ public class C02Insert {
 		//sql query 객체 생성
 		//Query문 준비
 //		pstmt = conn.prepareStatement("insert into tbl_a values(1, 'no') ");
-		pstmt = conn.prepareStatement("insert into tbl_a values(?, ?) "); 	//? : 변수
-//		pstmt.setInt(1, 2); //첫 번째 물음표에, 들어갈 문자
-//		pstmt.setString(2, "홍길동"); //두 번째 물음표에, 들어갈 문자열
-		
+		pstmt = conn.prepareStatement("update tbl_a set name=? where no=?"); 	//? : 변수
+										//where 조건절이 일치하면 이름 바꾸기
 		//외부로부터 인자값을 받아서 db로 넣어줌
-		pstmt.setInt(1, Integer.parseInt(args[0]));
+		pstmt.setString(1,  args[1]);
+		pstmt.setInt(2, Integer.parseInt(args[0]));
 						//0번째 args는 숫자형이라 가정
-		pstmt.setString(2,  args[1]);
+		
 		
 		//sql를 dbms로 전달
 		//전송(전달)
 		int result = pstmt.executeUpdate();	//DML(INSERT,UPDATE,DELETE)전달 가능, 
 		//결과값으로 java에서 처리
 		if(result>0){
-			System.out.println("INSERT 성공");
+			System.out.println("UPDATE 성공");
 		}
 		else {
-			System.out.println("INSERT 실패");
+			System.out.println("UPDATE 실패");
 		}
 		
 		

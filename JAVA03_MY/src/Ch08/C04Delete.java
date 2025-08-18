@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class C02Insert {
+public class C04Delete {
 
 	public static void main(String[] args) {
 		//DB CONN DATA
