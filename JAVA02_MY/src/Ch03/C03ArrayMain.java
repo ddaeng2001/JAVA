@@ -2,8 +2,7 @@ package Ch03;
 
 public class C03ArrayMain {
 	public static void main(String[] args) {
-//		int [][] arr = new int[행개수][열개수]
-//		n차원의 구성요소는 n-1차원 배열이다
+
 		
 //		1차원 배열 VS 2차원 배열
 //		int arr[] = new int[3]
@@ -16,7 +15,7 @@ public class C03ArrayMain {
 //
 //		3차원 배열의 배열 요소는 2차원 배열
 //
-//		결론 : n차원의 배열요소는 n-1차원 배열이다
+
 		
 		
 		//2차원 배열의 배열요소는 1차원 배열

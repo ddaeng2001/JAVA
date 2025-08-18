@@ -1,6 +1,6 @@
 package Ch03;
 
-//클래스형 배열
+
 
 class C04Person{
 	String name;
