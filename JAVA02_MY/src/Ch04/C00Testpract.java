@@ -12,12 +12,12 @@ public class C00Testpract {
 	
 	//리스트 정렬 메서드
 	public static void sort(boolean isAsend) { //boolean isAsend : 오름차순이냐? 그렇다면 True, 내림차순이라면 False
-		if(isAsend) {
-			wordList.sort(Comparator.naturalOrder());
+		if(isAsend) { //오름차순이라면
+			wordList.sort(Comparator.naturalOrder()); //오름차순정렬
 			System.out.println("오름차순 : " + wordList);
 		}
-		else {
-			wordList.sort(Comparator.reverseOrder());
+		else { //아니라면(내림차순이라면)
+			wordList.sort(Comparator.reverseOrder()); //내림차순 정렬
 			System.out.println("내림차순 : " + wordList);
 		}
 	}
@@ -25,18 +25,18 @@ public class C00Testpract {
 	//리스트에 단어 추가하는 메서드
 	public static void add(String word) {
 		wordList.add(word);
-		System.out.println("단어 추가 완료!");
+		System.out.println("단어 추가 완료!"); //한번에 공백을 포함한 여러 단어를 추가하려면 어떻게 해야할까?
 	}
 	
 	//리스트 내용 출력 메서드
 	public static void show() {
-		for(String wd : wordList) {
+		for(String wd : wordList) { //wordList를 순회하며 하나씩 단어를 출력함
 			System.out.println(wd);
 		}
 	}
 
 	public static void main(String[] args) {
-		int n= 0;
+		int n= 0; //초기화
 		
 		//무한반복(메뉴 계속 보여줌)
 		while(true) {
