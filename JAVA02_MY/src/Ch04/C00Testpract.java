@@ -60,7 +60,7 @@ public class C00Testpract {
 				
 			case 2 : //2번 선택시 : 리스트 정렬
 				System.out.println("오름차순 여부(1:오름차순, 0: 내림차순) : ");
-				int no = sc.nextInt();
+				int no = sc.nextInt(); //숫자 입력받음
 				if(no==1) sort(true); else sort(false);
 				//1(오름차순)				//0(내림차순)
 				
@@ -75,7 +75,7 @@ public class C00Testpract {
 				System.exit(-1); // 즉시 강제 종료
 				break;
 				
-			default: // 그 외의 값 입력 시
+			default: // 1~4외의 값 입력 시
 				System.out.println("다시 입력하세요.");
 			}
 		}
