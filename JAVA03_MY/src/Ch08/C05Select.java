@@ -33,7 +33,7 @@ public class C05Select { //db 조회결과물 가져오기
 		
 		//sql query 객체 생성
 		//Query문 준비
-//		pstmt = conn.prepareStatement("insert into tbl_a values(1, 'no') ");
+//		pstmt = conn.prepareStatement("SELECT * FROM tbl_a ");
 		rs = pstmt.executeQuery();
 		//result set(rs)은 표 형태의 오브젝트를 그대로 가져옴
 		//rs는 0번째 column 가리킴
