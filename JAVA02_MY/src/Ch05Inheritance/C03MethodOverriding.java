@@ -8,6 +8,21 @@ package Ch05Inheritance;
 // 낼 수 있다
 
 
+
+// 오버로딩(Overloading) VS 오버라이딩 (Overriding)
+
+// 오버로딩?
+// 상속전제 X
+// 함수 헤더 변경(함수 이름 중복 허용, 파라미터는 다양하게 허용)
+// 개발자의 편의성에 중점(함수이름 단일화)
+
+// 오버라이딩?
+// 상속전제 O
+// 함수본문변경(헤더 고정)
+// 다형성을 목적으로 한 문법 요소 : 같은 클래스로부터 내용을 물려받아도 다양한 결과의 클래스 생성이 가능함
+
+
+
 class Animal{
 	void Sound() {System.out.println("소리낸다...");}
 }
@@ -45,7 +60,8 @@ public class C03MethodOverriding {
 		//자료형이 다른데도 문제가 X = 자동형변환 by. 업캐스팅
 		animal.Sound();
 		
-		animal = cat;
+		animal = cat; // ★★★상위클래스를 상속받은 후 하위객체가 재정의한 상태라면 재정의한 결과값이 나옴★★★
+		
 		animal.Sound();
 		
 	}
