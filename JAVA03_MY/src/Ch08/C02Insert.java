@@ -31,12 +31,15 @@ public class C02Insert {
 							//연결 정보들이 Connection 객체에 저장됨 : getConnection();
 		System.out.println("DB CONNECTED...");
 		
+		
+		
 		//sql query 객체 생성
 		//Query문 준비
 //		pstmt = conn.prepareStatement("insert into tbl_a values(1, 'no') ");
 		pstmt = conn.prepareStatement("insert into tbl_a values(?, ?) "); 	//? : 변수
-//		pstmt.setInt(1, 2); //첫 번째 물음표에, 들어갈 문자
+//		pstmt.setInt(1, 2); //첫 번째 물음표에, 들어갈 값
 //		pstmt.setString(2, "홍길동"); //두 번째 물음표에, 들어갈 문자열
+		//외부인자 받아서 실행
 		
 		//외부로부터 인자값을 받아서 db로 넣어줌
 		pstmt.setInt(1, Integer.parseInt(args[0]));
@@ -45,7 +48,7 @@ public class C02Insert {
 		
 		//sql를 dbms로 전달
 		//전송(전달)
-		int result = pstmt.executeUpdate();	//DML(INSERT,UPDATE,DELETE)전달 가능, 
+		int result = pstmt.executeUpdate();	//UPDATE(INSERT,UPDATE,DELETE)전달 가능/반환됨 
 		//결과값으로 java에서 처리
 		if(result>0){
 			System.out.println("INSERT 성공");

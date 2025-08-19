@@ -40,6 +40,7 @@ public class C05Select { //db 조회결과물 가져오기
 		
 		if(rs!=null) {
 			while(rs.next()) { //rs.next() : rs가 가리키고 있는 커서의 위치를 다음으로 내림(행이 있으면 True, 없으면 False)
+				  //rs.next() : 한 행씩 건너뛰면서 컬럼값을 가져옴
 				System.out.print(rs.getInt("no")+".");
 								//rs에서 가리키고 있는 no라고하는 컬럼의 값을 가지고 옴.
 								//no의 자료형이 Int이기에 get Int라고 한 것
