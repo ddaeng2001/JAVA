@@ -35,15 +35,18 @@ public class C02Insert {
 		
 		//sql query 객체 생성
 		//Query문 준비
+						//conn에 연결된 DB에 "insert into tbl_a values(1,'no')"쿼리를 실행할 준비를 한다. 결과로 PreparedStatement 객체 pstmt를 획득
 //		pstmt = conn.prepareStatement("insert into tbl_a values(1, 'no') ");
+					 //prepareStatement : 미리 컴파일된 SQL 문을 내부에 저장하고, 실행할 준비를 마친 상태로 유지
 		pstmt = conn.prepareStatement("insert into tbl_a values(?, ?) "); 	//? : 변수
-//		pstmt.setInt(1, 2); //첫 번째 물음표에, 들어갈 값
-//		pstmt.setString(2, "홍길동"); //두 번째 물음표에, 들어갈 문자열
+//		pstmt.setInt(1, 2); //(첫 번째 물음표에, 들어갈 값)
+//		pstmt.setString(2, "홍길동"); //(두 번째 물음표에, 들어갈 문자열)
 		//외부인자 받아서 실행
 		
 		//외부로부터 인자값을 받아서 db로 넣어줌
 		pstmt.setInt(1, Integer.parseInt(args[0]));
 						//0번째 args는 숫자형이라 가정
+		
 		pstmt.setString(2,  args[1]);
 		
 		//sql를 dbms로 전달
