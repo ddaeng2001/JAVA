@@ -49,6 +49,11 @@ public class C05Select { //db 조회결과물 가져오기
 			}
 		}
 		
+		//prepareStatement() : SQL쿼리("")를 미리 컴파일해서 PreparedStatement 객체 생성
+		//pstmt = SQL 쿼리를 실행할 준비가 된 상태의 객체
+		//결론 : tbl_a 테이블에 있는 모든 데이터를 조회하는 쿼리를 실행할 준비를 하겠다!
+		
+		
 		pstmt = conn.prepareStatement("SELECT * FROM tbl_a");
 //		pstmt = conn.prepareStatement("SELECT * FROM opendatadb.tbl_a;");
 													//db명 필요x,     ;필요x
