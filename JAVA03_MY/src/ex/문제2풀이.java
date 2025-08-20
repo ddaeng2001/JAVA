@@ -86,33 +86,33 @@ public class 문제2풀이 {
 		return dto; //dto(BookDto 객체) 반환
 	}
 
-	public static int insertBook(BookDto bookDto) throws SQLException {//외부에서 받은 BookDto 객체 값을 db에 삽입한 후
-																	   //예외발생 시 메서드를 호출한 곳에서 SQLException 처리할 것
-								
-		pstmt = conn.prepareStatement("insert into tbl_book values(?, ?, ?, ?) "); // INSERT 쿼리문 생성
-		// sql를 dbms로 전달 										  //4개의 ?파라미터 받음
-		
-		// 외부로부터 인자값을 받아서 db로 삽입
-		pstmt.setLong(1, bookDto.getBookCode()); // BookCode 값을 가져와서(get) 1번째 ? 자리에 Long타입으로 저장(set)
-		pstmt.setString(2, bookDto.getBookname()); // Bookname 값을 가져와서(get) 2번째 ? 자리에 String타입으로 저장(set)
-		pstmt.setString(3, bookDto.getPublisher()); // getPublisher 값을 가져와서(get) 3번째 ? 자리에 String타입으로 저장(set)
-		pstmt.setString(4, bookDto.getIsbn()); // Isbn 값을 가져와서(get) 4번째 ? 자리에 String타입으로 저장(set)
-		
-		int result = pstmt.executeUpdate(); // 실행 
-		return result; // 증가된 행(row)의 개수 값 리턴
-	}
+//	public static int insertBook(BookDto bookDto) throws SQLException {//외부에서 받은 BookDto 객체 값을 db에 삽입한 후
+//																	   //예외발생 시 메서드를 호출한 곳에서 SQLException 처리할 것
+//								
+//		pstmt = conn.prepareStatement("insert into tbl_book values(?, ?, ?, ?) "); // INSERT 쿼리문 생성
+//		// sql를 dbms로 전달 										  //4개의 ?파라미터 받음
+//		
+//		// 외부로부터 인자값을 받아서 db로 삽입
+//		pstmt.setLong(1, bookDto.getBookCode()); // BookCode 값을 가져와서(get) 1번째 ? 자리에 Long타입으로 저장(set)
+//		pstmt.setString(2, bookDto.getBookname()); // Bookname 값을 가져와서(get) 2번째 ? 자리에 String타입으로 저장(set)
+//		pstmt.setString(3, bookDto.getPublisher()); // getPublisher 값을 가져와서(get) 3번째 ? 자리에 String타입으로 저장(set)
+//		pstmt.setString(4, bookDto.getIsbn()); // Isbn 값을 가져와서(get) 4번째 ? 자리에 String타입으로 저장(set)
+//		
+//		int result = pstmt.executeUpdate(); // 실행 
+//		return result; // 증가된 행(row)의 개수 값 리턴
+//	}
 
 	public static int updateBook(BookDto bookDto) throws SQLException {//외부에서 받은 BookDto 객체로 db 값 수정 후
 		   															   //예외발생 시 메서드를 호출한 곳에서 SQLException 처리할 것
 
-		pstmt = conn.prepareStatement("update tbl_book set bookName=?, publisher=?, isbn=? where bookCode= ?");
+		pstmt = conn.prepareStatement("update tbl_book set bookname=?, publisher=?, isbn=? where bookCode= ?");
 		// sql를 dbms로 전달 			   // bookCode를 통해서 수정할 행을 지정하고 bookName, publisher, isbn 컬럼값을 수정해라
 		
 		// 외부로부터 인자값을 받아서 db로 삽입
-		pstmt.setLong(1, bookDto.getBookCode()); // BookCode 값을 가져와서(get) 1번째 ? 자리에 Long타입으로 저장(set)
-		pstmt.setString(2, bookDto.getBookname()); // Bookname 값을 가져와서(get) 2번째 ? 자리에 String타입으로 저장(set)
-		pstmt.setString(3, bookDto.getPublisher()); // getPublisher 값을 가져와서(get) 3번째 ? 자리에 String타입으로 저장(set)
-		pstmt.setString(4, bookDto.getIsbn()); // Isbn 값을 가져와서(get) 4번째 ? 자리에 String타입으로 저장(set)
+		pstmt.setString(1, bookDto.getBookname()); // BookCode 값을 가져와서(get) 1번째 ? 자리에 Long타입으로 저장(set)
+		pstmt.setString(2, bookDto.getPublisher()); // Bookname 값을 가져와서(get) 2번째 ? 자리에 String타입으로 저장(set)
+		pstmt.setString(3, bookDto.getIsbn()); // getPublisher 값을 가져와서(get) 3번째 ? 자리에 String타입으로 저장(set)
+		pstmt.setLong(4, bookDto.getBookCode()); // Isbn 값을 가져와서(get) 4번째 ? 자리에 String타입으로 저장(set)
 		
 		int result = pstmt.executeUpdate(); // 실행 
 		return result; // 수정된 행(row)의 개수 값 리턴
@@ -130,6 +130,7 @@ public class 문제2풀이 {
 
 	public static void main(String[] args) {
 		try { //예외발생 가능성 존재
+			
 			// DBCONN
 			conn();
 
@@ -138,45 +139,46 @@ public class 문제2풀이 {
 
 			// INSERT
 //			insertBook(new BookDto(1L, "도서명1", "출판사명1", "isbn-1"));
-//			insertBook(new BookDto(2L, "도서명1", "출판사명1", "isbn-1"));
-//			insertBook(new BookDto(3L, "도서명1", "출판사명1", "isbn-1"));
-//			insertBook(new BookDto(4L, "도서명1", "출판사명1", "isbn-1"));
+//			insertBook(new BookDto(2L, "도서명2", "출판사명2", "isbn-2"));
+//			insertBook(new BookDto(3L, "도서명3", "출판사명3", "isbn-3"));
+
 
 //			// SELECTALL
 			List<BookDto> allBook = selectAll(); // bookDto가 리스트형으로 반환됨
 			System.out.println("SelectAll : ");
 			allBook.forEach(System.out::println);
+			
 
 //			// SELECT
 			BookDto dto = select(1L);
 			System.out.println("select : " + dto);
 
 //			// UPDATE
-//			dto.setBookName("수정도서명-2");
-//			dto.setPublisher("수정출판사명-2");
-//			int r1 = updateBook(dto);
-//			if (r1 > 0)
-//				System.out.println("수정완료 : " + r1);
+			dto.setBookname("수정도서명-2");
+			dto.setPublisher("수정출판사명-2");
+			int r1 = updateBook(dto);
+			if (r1 > 0) //한 행이라도 수정이 됐다면
+				System.out.println("수정완료 : " + r1);
 //
 //			// DELETE
 			int r2 = deleteBook(dto);
-			if (r2 > 0)
+			if (r2 > 0)//한 행이라도 삭제됐다면
 				System.out.println("삭제완료 : " + r2);
-//
-//			Tip** SELECT/UPDATE/DELETE 코드는 서로 쉐어하면 됨
+
+
 
 //			//TX END
-			conn.commit(); // 트랜잭션 끝
-						   // 하나라도 작동하지 않으면 롤백!
+			conn.commit(); // 트랜잭션 끝 - 커밋 직접 실행
 			
 			
 		} catch (Exception e) {
 			//예외 발생 시 트랜잭션 롤백
-			
+			e.printStackTrace(); //예외출력
 			// TX ROLLBACKALL
 			try {
-				conn.rollback(); //Connection 객체 트랜잭션을 rollback
+				conn.rollback(); //conn(Connection 객체) 트랜잭션을 rollback
 			} catch (Exception e2) {
+				e2.printStackTrace(); //예외출력
 				
 			}
 		} finally { //예외발생 상관없이 무조건적으로 실행되는 부분

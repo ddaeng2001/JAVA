@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class C02Insert {
+public class C02Insert { //Tip** SELECT/UPDATE/DELETE 코드는 서로 쉐어하면 됨
 
 	public static void main(String[] args) {
 		//DB CONN DATA
