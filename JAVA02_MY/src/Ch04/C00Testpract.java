@@ -13,10 +13,12 @@ public class C00Testpract {
 	//리스트 정렬 메서드
 	public static void sort(boolean isAsend) { //boolean isAsend : 오름차순이냐? 그렇다면 True, 내림차순이라면 False
 		if(isAsend) { //오름차순이라면
+//			Collections.sort(wordList);				//Collections 메서드
 			wordList.sort(Comparator.naturalOrder()); //오름차순정렬
 			System.out.println("오름차순 : " + wordList);
 		}
 		else { //아니라면(내림차순이라면)
+//			Collections.sort(wordList, Collections.reverseOrder());	//Collections 메서드
 			wordList.sort(Comparator.reverseOrder()); //내림차순 정렬
 			System.out.println("내림차순 : " + wordList);
 		}

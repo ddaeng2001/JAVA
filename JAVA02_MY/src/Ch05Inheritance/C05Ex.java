@@ -1,17 +1,22 @@
-package Ch05;
-
+package Ch05Inheritance;
+//is a 관계를 대입해봤을 때 성립되면 상속관계로 간주
 class Employee {
 	public String name;
-	private int age;
-	private String addr;
+	protected int age; //상속관계에 있는 하위 클래스에서도  접근이 가능함 : protected(~ 표시)
+	protected String addr;
 
+	//기본생성자
+	public Employee() {}
+	
+	//모든 인자 생성자
 	public Employee(String name, int age, String addr) {
 		super();
 		this.name = name;
 		this.age = age;
 		this.addr = addr;
 	}
-
+	
+	//getter - setter 함수 생성
 	public String getName() {
 		return name;
 	}
@@ -41,18 +46,24 @@ class Employee {
 class Parttimer extends Employee {
 	private int hour_pay;
 
+	//기본생성자
+	public Parttimer() {}
+	
+	//모든 인자 생성자
 	public Parttimer(String name, int age, String addr, int hour_pay) {
-		super(name, age, addr);
+		super(name, age, addr); //상위 클래스 생성자 호출하는 방법 super()
 		this.hour_pay = hour_pay;
 	}
 
+	//setter함수 생성
 	public void setHourPay(int hour_pay) {
 		this.hour_pay = hour_pay;
 	}
 
+	//toString()
 	@Override
 	public String toString() {
-		return "Parttimer [hour_pay=" + hour_pay + ", name=" + name + ", age=" + getAge() + ", addr=" + getAddr() + "]";
+		return "Parttimer [hour_pay=" + hour_pay + ", name=" + name + ", age=" + age + ", addr=" + addr + "]";
 	}
 
 
@@ -61,7 +72,11 @@ class Parttimer extends Employee {
 class Regular extends Employee {
 
 	private int salary;
-
+	
+	//기본생성자
+	public Regular() {}
+	
+	//모든 인자 생성자
 	public Regular(String name, int age, String addr, int salary) {
 
 		super(name, age, addr);
@@ -72,10 +87,10 @@ class Regular extends Employee {
 		this.salary = salary;
 	}
 
-
+	//toString()
 	@Override
 	public String toString() {
-		return "Regular [salary=" + salary + ", name=" + name + ", age=" + getAge() + ", addr=" + getAddr() + "]";
+		return "Regular [salary=" + salary + ", name=" + name + ", age=" + age + ", addr=" + addr + "]";
 	}
 }
 
