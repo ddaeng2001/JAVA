@@ -57,7 +57,7 @@ class Won2Dollar extends Converter{
 class 섭씨to화씨 extends Converter{
 	private double ratio;
 	
-	추상클래스는 구현을 뒤로 미룰 때 사용됨 -
+	추상클래스는 구현을 뒤로 미룰 때 사용됨 - 설계에 focus를 맞춤
 	추상클래스/인터페이스/구현함수헤더를 조장이
 	헤더를 기반으로 한 함수 구현은 조원이
 }
