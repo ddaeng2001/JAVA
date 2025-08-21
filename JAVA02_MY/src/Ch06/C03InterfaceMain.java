@@ -16,7 +16,7 @@ class Tv implements Remocon{
 	  //unimplemented method clicked!
 
 	//멤버변수
-	private int nowVol; //현재 볼륨값 생성
+	private int nowVol; //현재 볼륨값 저장하는 변수
 	
 	@Override
 	public void powerOn() {
@@ -87,7 +87,7 @@ class Radio implements Remocon{
 
 public class C03InterfaceMain {
 	
-
+							//Remocon 인터페이스 타입을 참조하는 controller라는 변수(파라미터)
 	public static void TurnOn(Remocon controller) {
 		controller.powerOn();
 	}	
