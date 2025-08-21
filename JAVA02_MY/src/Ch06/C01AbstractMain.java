@@ -46,10 +46,10 @@ public class C01AbstractMain {
 //		Parent2 obj1 = new Parent2(); //미완성된 함수를 하나 이상 가지고 있기에 함수를 완성시키지 않으면 객체 생성X
 		Son2 obj2 = new Son2(); 	  //하위클래스형으로 객체 생성 O
 		//추상메서드를 완성시킨 클래스
-		Parent2 obj3 = new Son2();	  //UPCASTING 연결 O
+		Parent2 obj3 = new Son2();	  //UPCASTING O
 		obj3.func();				  //재정의된 함수(미완성 -> 구현된 메서드) 접근 가능
 		
-		//
+		
 		
 	}
 

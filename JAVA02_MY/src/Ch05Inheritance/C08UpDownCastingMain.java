@@ -25,7 +25,7 @@ public class C08UpDownCastingMain {
 		
 		System.out.println("---------------------------");
 		//UpCasting
-		Parent ob3 = new Son();
+		Parent ob3 = new Son(); //재정의된 func2()함수에 접근 가능
 		ob3.func1();
 		ob3.func2(); //상속관계에서 상위클래스에서 없는 게 만들어지면 업캐스팅에서 접근 불가능 - 다운 캐스팅 해야함
 					 //but, 함수가 재정의된 상태라면 업캐스팅되어있더라도 접근이 가능함
@@ -33,7 +33,7 @@ public class C08UpDownCastingMain {
 		//Upcasting 된 상태에서
 		//확장된(멤버추가) 멤버변수 접근 가능한가? x -> Downcasting해야 가능
 		//확장된(멤버추가) 멤버함수 접근 가능한가? x -> DownCasting해야 가능
-		//재정의된 멤버함수 접근 가능한가? O!!!
+		//재정의된 멤버함수 접근 가능한가? O!!! : 재정의를 한다면 DownCasting을 하지 않아도 접근이 가능함
 		
 	}
 
