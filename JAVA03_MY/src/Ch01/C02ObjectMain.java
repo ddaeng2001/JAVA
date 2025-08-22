@@ -1,6 +1,6 @@
 package Ch01;
 
-class C02Simple
+class C02Simple //<equals(Object obj)메서드
 {
 	int n;
 	C02Simple(int n) {

@@ -2,7 +2,7 @@ package Ch01;
 
 import java.util.Objects;
 
-class C03Simple
+class C03Simple //hashCode()메서드
 {
 	int n;
 	C03Simple(int n) {
