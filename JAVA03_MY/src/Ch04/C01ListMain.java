@@ -12,7 +12,8 @@ public class C01ListMain {
 		List<String> list = new ArrayList(); // 상위클래스에 하위클래스를 연결함 : UPCASTING
 		//상위클래스List			//하위클래스ArrayList
 		//< > : list안에 저장된 자료형은 String임을 명시해줌
-		
+		//	  : <>자료형 안에는 클래스형 자료형만 들어갈 수 있음, 원시타입 불가능!
+			
 		//추가 - 값삽입
 		list.add("HTML/CSS/JS");
 		list.add("NODEJS");
