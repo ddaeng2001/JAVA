@@ -18,7 +18,7 @@ class C04GUI extends JFrame{
 		
 		//Panel Setting
 		JPanel panel = new JPanel(); //JPanel : Java-Panel의 약자
-		panel.setLayout(null); //레이아웃 설정을 무효화 : 중간 자동배치 방지
+		panel.setLayout(null); //레이아웃 설정을 무효화 : 중간 자동배치 방지함으로써 위치 선정 자유롭게 가능해짐
 		
 		//Component Setting : 레이아웃을 설정할 수 있는데 기본적으로 버튼이 중간에 위치하는 이유
 		//ex>버튼, 텍스트 삽입
