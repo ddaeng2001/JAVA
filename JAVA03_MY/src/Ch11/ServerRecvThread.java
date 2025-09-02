@@ -29,6 +29,7 @@ public class ServerRecvThread implements Runnable {
 
 			} catch (Exception e) {
 				System.out.println("[EXCEPTION] 예외발생 SEND THREAD 종료");
+				break;
 			} finally {
 
 			}

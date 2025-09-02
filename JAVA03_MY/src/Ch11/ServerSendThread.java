@@ -34,6 +34,7 @@ public class ServerSendThread implements Runnable {
 					break; // 나가기
 			} catch (Exception e) {
 				System.out.println("[EXCEPTION] 예외발생 SEND THREAD 종료");
+				break;
 			} finally {
 
 			}

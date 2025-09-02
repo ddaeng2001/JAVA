@@ -27,6 +27,7 @@ public class ClientRecvThread implements Runnable { // 스레드로 만들기 �
 
 			} catch (Exception e) {
 				System.out.println("[EXCEPTION] 예외발생 RECV THREAD 종료");
+				break;
 			} finally {
 
 			}
