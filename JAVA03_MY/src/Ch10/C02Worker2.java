@@ -1,0 +1,18 @@
+package Ch10;
+
+public class C02Worker2 implements Runnable{
+
+	@Override
+	public void run() {
+		for(int i=0;i<5;i++) {
+			System.out.println("TASK02...");
+			try {
+				Thread.sleep(500); //5초 지연시간
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} 		
+		}
+		
+	}
+
+}
