@@ -1,6 +1,7 @@
 package Ch17;
 
 import java.util.Scanner;
+//함수형 프로그램은 인터페이스 구현 시 하나만 있어야함!
 
 interface Printer
 {
