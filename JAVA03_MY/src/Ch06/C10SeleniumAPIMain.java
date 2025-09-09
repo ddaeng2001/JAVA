@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 //크롬드라이브 다운로드 경로
 //https://googlechromelabs.github.io/chrome-for-testing/#stable
 
+//수집하는 주기를 설정해서 수집 작업을 지속할 때 사용할 수 있는 크롤링 도구 중 하나
 
 public class C10SeleniumAPIMain { //JSOUP : 크롤링 봇을 만들어서 클릭 
 								  //Selenium : 사람이 클릭하는 것처럼 보여줌

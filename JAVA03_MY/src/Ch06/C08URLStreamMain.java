@@ -23,10 +23,12 @@ public class C08URLStreamMain { //java에서 브라우저에 특정 url을 연�
 		//buffer기능을 추가하는 걸 대신해서 빠르게 데이터를 받아올 수 있음
 		//기존 스트림에 여러 보조스트림을 띄우기 가능
 		
-		//버퍼를 자동으로 띄우는보조스트림 추가
+		//버퍼를 자동으로 띄우는 보조스트림 추가
 		BufferedInputStream buffIn = new BufferedInputStream(in); //버퍼를 공간을 기본스트림에 저장하는 보조스트림 작업
+		
 		//byte->char 변환시키는 보조스트림 추가(코드 짧아서 효율적)
 		Reader rin = new InputStreamReader(buffIn);
+						//2byte단위로 변환시켜주는 변환스트림
 		
 		//문자단위의 스트림 생성(보통 문서는 String인 경우가 多기 때문)
 		Writer fout = new FileWriter("c:\\IOTEST\\index.html"); //html파일로 저장함

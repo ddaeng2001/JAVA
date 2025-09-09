@@ -33,7 +33,7 @@ public class C04BufferAddMain {// File->JAVA
 													 								//예를 들어 파일에 10000자가 있다면 마지막 루프에서는 1816자만 읽을 수도 그럴 때
 																					//fout.write(buff); 같이 배열 전체를 써버리면 이전에 남아 있던 쓰레기 값까지 써질 위험
 													 //출력 스트림(fout)을 통해 복사본 파일에 씀
-			if(data==-1)
+			if(data==-1)	//읽을 게 없으면 -1!
 				break;
 			else {
 				strBuffer.append((char)data);
