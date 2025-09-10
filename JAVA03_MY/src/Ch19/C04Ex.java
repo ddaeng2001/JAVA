@@ -1,5 +1,6 @@
 package Ch19;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.function.Function;
 
@@ -14,6 +15,10 @@ public class C04Ex {
 	
 	
 	public static void main(String[] args) {
+List<String> list =   Arrays.asList("aaaaaa","bbbbb","cc","ddeeeeee","ee");
+		
+		int r1 =  func1.apply(list);
+		System.out.println("r1 : " + r1);
 		
 	}
 	

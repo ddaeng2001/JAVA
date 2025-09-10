@@ -2,7 +2,7 @@ package Ch20;
 
 //프라임워크 내의 Annotation 흐름이 어떻게 되는지 확인하는 작업
 
-@CustomAnnotation(value="홍길동",number=10000,isOpen=true )
+@C01CustomAnnotation(value="홍길동",number=10000,isOpen=true )
 //오류 뜨는 이유 : Annotation내의 값 삽입이 안된 상태일 떄
 //CustomAnnotation() : ()내에 값을 따로 설정하지 않을 경우 CustomAnnotation에 기본값이 삽입됨(CustomAnnotation 커스터마이징 시 설정해놓은 default값)
 
@@ -20,7 +20,7 @@ class Simple
 		//아래의 작업을 Processor가 대신 해줌. 그냥 우리가 확인한 것일뿐!
 		
 		//메타정보(클래스 정보) 꺼내올 예정
-		CustomAnnotation ref = this.getClass().getAnnotation(CustomAnnotation.class);
+		C01CustomAnnotation ref = this.getClass().getAnnotation(C01CustomAnnotation.class);
 		//CustomAnnotation의 참조형태다!
 		
 		
@@ -34,7 +34,7 @@ class Simple
 	}
 }
 
-public class Main {
+public class C01Main {
 
 	public static void main(String[] args) {
 		

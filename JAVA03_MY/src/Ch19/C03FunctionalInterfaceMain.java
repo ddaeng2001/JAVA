@@ -153,7 +153,8 @@ public class C03FunctionalInterfaceMain {
 
 		//09
 		System.out.println(func9.apply(10).apply(20));
-							//func9.apply(10)자체가 람다식이 return되므로 apply를 한번 더 사용이 가능함
+							//func9.apply(10)은 y->10(x)+y라는 새로운 람다식을 반환
+							//람다식 자체가 Function 타입이므로 .apply()를 사용할 수 있는 객체가 됨
 		//결과값: 30
 
 		//10

@@ -15,7 +15,7 @@ import java.lang.annotation.Target;
 												//ElementType.METHOD : 메서드에 적용
 
 		//Annotation임을 명시하기 위한 @삽입
-public @interface CustomAnnotation {
+public @interface C01CustomAnnotation {
 	
 	//Annotation에 지정할 옵션 값 지정(함수형으로만!)
 	//담겨진 데이터 값 지정
