@@ -117,7 +117,8 @@ public class C03FunctionalInterfaceMain {
 	//10
 	//함수형 인터페이스를 반환자료형으로 받는(2)(9번과 동일하나 간결화시킴)
 		public static Function<Integer, Function<Integer, Integer>> func10 = x->y->x+y;
-		//첫번째 apply10을 x가 받고 2번째 apply를 썼을 때 첫번째 apply값은 그대로 유지된 채로 ~?
+		//첫번째 apply(10)을 x가 받고 2번째 apply를 썼을 때 첫번째 apply값은 그대로 유지된 채로 두 번째 apply의 인자만 변함
+		//즉 x에 10이 들어간 상태(유지된 상태)로 == x에 10이 삽입된 상태
 			
 	
 	public static void main(String[] args) {
